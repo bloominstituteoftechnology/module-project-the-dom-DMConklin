@@ -11,8 +11,9 @@ function moduleProject1() {
   // 👉 TASK 2 - Build a "Quote of the Day" widget
   //  ✨ add your code here
   let randomQuote = quotes[Math.floor(Math.random() * quotes.length)]
+  console.log(randomQuote)
   let quoteDiv = document.createElement('div')
-  quoteDiv.textContent = randomQote['quote']
+  quoteDiv.textContent = randomQuote['quote']
   let authorDiv = document.createElement('div')
   authorDiv.textContent = randomQuote['author'] + ' in ' + (randomQuote['date'] === null ? 'an unknown date' : randomQuote['date'])
   document.querySelector('.quoteoftheday').append(quoteDiv)
