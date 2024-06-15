@@ -10,11 +10,11 @@ function moduleProject1() {
   document.querySelectorAll('section div').forEach(widget => widget.classList.add('widget'))
   // 👉 TASK 2 - Build a "Quote of the Day" widget
   //  ✨ add your code here
-  let random = Math.floor(Math.random() * quotes.length)
+  let randomQuote = quotes[Math.floor(Math.random() * quotes.length)]
   let quoteDiv = document.createElement('div')
-  quoteDiv.textContent = quotes[random]['quote']
+  quoteDiv.textContent = randomQote['quote']
   let authorDiv = document.createElement('div')
-  authorDiv.textContent = quotes[random]['author'] + ' in ' + (quotes[random]['date'] === null ? 'an unknown date' : quotes[random]['date'])
+  authorDiv.textContent = randomQuote['author'] + ' in ' + (randomQuote['date'] === null ? 'an unknown date' : randomQuote['date'])
   document.querySelector('.quoteoftheday').append(quoteDiv)
   document.querySelector('.quoteoftheday').append(authorDiv)
   // 👉 TASK 3 - Build a "Corporate Speak" widget
