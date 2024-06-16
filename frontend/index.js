@@ -29,6 +29,22 @@ function moduleProject1() {
   document.querySelector('.corporatespeak').append(corpJarg)
   // 👉 TASK 4 - Build a "Countdown" widget
   //  ✨ add your code here
+  let countdown = 4
+
+  let countdownP = document.createElement('p')
+  countdownP.textContent = `T-minus 5...`
+  document.querySelector('.countdown').append(countdownP)
+
+  function countdownText() {
+      document.querySelector('.countdown p').textContent = countdown > 0 ? `T-minus ${countdown}...` : 'Liftoff! 🚀'
+      if (countdown < 1) {
+        clearInterval()
+      }
+      countdown--
+  }
+
+  setInterval(countdownText, 1000)
+
 
   // 👉 TASK 5 - Build a "Friends" widget
   //  ✨ add your code here
