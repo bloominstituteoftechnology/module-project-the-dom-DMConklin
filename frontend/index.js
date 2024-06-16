@@ -64,7 +64,9 @@ function moduleProject1() {
     })
 
     friends.forEach((friend,i) => {
-      if (i < friends.length - 2) {
+      if (friends.length < 2) {
+        fString += `${fNames[friend].name}.`
+      } else if (i < friends.length - 2) {
         fString += `${fNames[friend].name}, `
       } else if (i < friends.length - 1) {
         fString += `${fNames[friend].name} `
@@ -81,7 +83,10 @@ function moduleProject1() {
 
   // 👉 TASK 6 - Make it so user can tab through the widgets
   //  ✨ add your code here
-
+  let widgetList = document.querySelectorAll('.widget')
+  widgetList.forEach((w, i) => {
+    w.setAttribute('tabindex', i+1)
+  })
   // 👆 WORK WORK ABOVE THIS LINE 👆
 }
 
