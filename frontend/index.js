@@ -39,6 +39,7 @@ function moduleProject1() {
       document.querySelector('.countdown p').textContent = countdown > 0 ? `T-minus ${countdown}...` : 'Liftoff! 🚀'
       if (countdown < 1) {
         clearInterval()
+        return
       }
       countdown--
   }
@@ -48,6 +49,35 @@ function moduleProject1() {
 
   // 👉 TASK 5 - Build a "Friends" widget
   //  ✨ add your code here
+  let chosenPerson = people[randNum(people)]
+
+  function chosenFriends(friends) {
+    if (friends.length < 1) {
+      return 'has no friends.'
+    }
+    let fString = 'is friends with '
+    let fNames = {}
+    people.forEach(person => {
+      if (friends.includes(person.id)) {
+        fNames[`${person.id}`] = {'name': `${person.fname} ${person.lname}`}
+      }
+    })
+
+    friends.forEach((friend,i) => {
+      if (i < friends.length - 2) {
+        fString += `${fNames[friend].name}, `
+      } else if (i < friends.length - 1) {
+        fString += `${fNames[friend].name} `
+      } else {
+        fString += `and ${fNames[friend].name}.`
+      }
+    })
+    return fString
+  }
+
+  let friendsP = document.createElement('p')
+  friendsP.textContent = `${chosenPerson.fname} ${chosenPerson.lname} was born in ${chosenPerson.dateOfBirth.substr(0,4)} and ${chosenFriends(chosenPerson.friends)}`
+  document.querySelector('.friends').append(friendsP)
 
   // 👉 TASK 6 - Make it so user can tab through the widgets
   //  ✨ add your code here
