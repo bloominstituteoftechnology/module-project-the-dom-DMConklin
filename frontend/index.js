@@ -20,7 +20,13 @@ function moduleProject1() {
   document.querySelector('.quoteoftheday').append(authorDiv)
   // 👉 TASK 3 - Build a "Corporate Speak" widget
   //  ✨ add your code here
+  function randNum(multiplier) {
+    return Math.floor(Math.random() * multiplier.length)
+  }
 
+  let corpJarg = document.createElement('p')
+  corpJarg.textContent = `We need to ${verbs[randNum(verbs)]} our ${nouns[randNum(nouns)]} ${adverbs[randNum(adverbs)]} in order to ${verbs[randNum(verbs)]} our ${nouns[randNum(nouns)]} ${adverbs[randNum(adverbs)]}.`
+  document.querySelector('.corporatespeak').append(corpJarg)
   // 👉 TASK 4 - Build a "Countdown" widget
   //  ✨ add your code here
 
